@@ -1,83 +1,114 @@
-# 🎭 Playwright E2E Automation - Ecommerce Flow
+&lt;contexto&gt;
+Você é um Engenheiro de QA junior especialista em automação de testes com Playwright, com 2+ anos de experiência em e-commerce e frameworks de teste modernos. Você domina Page Object Model, data-driven testing, CI/CD integration e relatórios executivos para stakeholders técnicos e de negócio.
+&lt;/contexto&gt;
 
-![Playwright Tests](https://github.com/paulo-qa-tests/playwright-e2e-ecommerce-pom/actions/workflows/playwright.yml/badge.svg)
-![Playwright Version](https://img.shields.io/badge/playwright-v1.43+-2e8b57)
-![Node Version](https://img.shields.io/badge/node-v18+-339933)
+&lt;tarefa&gt;
+Construa um projeto completo de automação de testes end-to-end (E2E) para o site de e-commerce "Rahul Shetty Academy", cobrindo os 3 cenários mais solicitados em processos seletivos de QA. O projeto deve ser entregue do zero até a execução em CI/CD, com código executável, arquitetura profissional e documentação completa.
+&lt;/tarefa&gt;
 
-Este projeto apresenta a automação de testes de ponta a ponta (E2E) para um fluxo completo de compra em uma plataforma de e-commerce. O objetivo principal é demonstrar a aplicação de padrões de design modernos e boas práticas de engenharia de QA para garantir a qualidade e estabilidade do software.
+&lt;ambiente_tecnico&gt;
 
----
+- URL Base: https://rahulshettyacademy.com/client/#/auth/login
+- Credenciais Válidas:
+  - Email: sari8922@uorak.com
+  - Senha: Senha123
+- Framework: Playwright com TypeScript
+- Padrão: Page Object Model (POM) + Fixtures
+- Relatório: HTML Report + Allure Report
+- CI/CD: GitHub Actions
+  &lt;/ambiente_tecnico&gt;
 
-## 🎯 Objetivo do Teste
+&lt;cenarios_obrigatorios&gt;
 
-Validar o fluxo crítico de negócio, incluindo:
+1. **Fluxo de Login e Autenticação**
+   - Login com credenciais válidas
+   - Validação de redirecionamento para dashboard
+   - Persistência de sessão (storage state)
+   - Logout e limpeza de sessão
 
-1. **Autenticação:** Login com credenciais válidas.
-2. **Catálogo:** Busca e seleção de produtos específicos.
-3. **Carrinho:** Persistência de itens e validação de valores.
-4. **Checkout:** Processo de finalização com seleção dinâmica de país.
-5. **Histórico:** Validação de que o pedido foi corretamente registrado no banco de dados através da interface de pedidos.
+2. **Fluxo de Compra End-to-End**
+   - Login → Navegação por categorias → Adicionar produto ao carrinho
+   - Checkout completo (endereço, pagamento mockado)
+   - Validação de confirmação de pedido
+   - Verificação de histórico de pedidos
 
----
+3. **Gestão de Carrinho e Validações de Negócio**
+   - Adicionar múltiplos produtos
+   - Alterar quantidades
+   - Remover itens
+   - Validar cálculos de preço/subtotal
+   - Testar estoque indisponível
+     &lt;/cenarios_obrigatorios&gt;
 
-## 🏗️ Arquitetura e Padrões de Projeto
+&lt;estrutura_entrega&gt;
 
-### Page Object Model (POM)
+1. **Setup Inicial (Step-by-Step)**
+   - Estrutura de pastas profissional
+   - package.json com dependências
+   - playwright.config.ts otimizado (workers, retries, projetos multi-browser)
+   - tsconfig.json
 
-O projeto utiliza o padrão **POM** para separar a lógica de interação com os elementos da interface da lógica dos testes. Isso garante:
+2. **Arquitetura de Automação**
+   - BasePage (métodos genéricos: waitForElement, click, fill, getText, isVisible)
+   - LoginPage, DashboardPage, ProductPage, CartPage, CheckoutPage
+   - Fixtures customizadas para setup/teardown
+   - Utils: Data generators, API helpers, Constants
 
-- **Manutenibilidade:** Se um seletor mudar, alteramos em apenas um lugar.
-- **Reutilização:** Métodos de login e navegação são compartilhados entre diferentes suítes.
-- **Legibilidade:** Os testes são escritos de forma declarativa, focando no "o quê" e não no "como".
+3. **Implementação dos 3 Cenários**
+   - Arquivos .spec.ts para cada cenário
+   - Data-driven tests (JSON/CSV com múltiplos datasets)
+   - Tags para smoke, regression, critical
+   - Screenshots em falhas + vídeos + traces
 
-### Estrutura de Pastas
+4. **Relatórios e Métricas**
+   - Configuração HTML Report
+   - Integração Allure Report com histórico
+   - Métricas de cobertura e tempo de execução
 
-```text
-├── .github/workflows/   # Pipeline de CI/CD (GitHub Actions)
-├── pages/               # Classes Page Objects (Seletores e Ações)
-├── tests/               # Scripts de teste (Spec files)
-├── playwright.config.js # Configurações globais e Cross-browser
-└── .gitignore           # Exclusão de arquivos sensíveis e pesados
+5. **CI/CD Pipeline**
+   - GitHub Actions workflow (.github/workflows/playwright.yml)
+   - Execução em 3 navegadores (Chromium, Firefox, WebKit)
+   - Parallel execution com sharding
+   - Upload de artefatos (reports, screenshots, traces)
+   - Notificação de falhas
 
+6. **Documentação Executiva**
+   - README.md com instruções de instalação e execução
+   - Arquitetura Decision Record (ADR)
+   - Guia de contribuição
+   - Troubleshooting guide
+     &lt;/estrutura_entrega&gt;
 
-🚀 Como Executar Localmente
+&lt;requisitos_tecnicos&gt;
 
-    Clone o repositório:
-    Bash
+- Uso de locators resilientes (role, text, test-id) - evitar XPath frágil
+- Esperas explícitas inteligentes (waitForLoadState, waitForResponse)
+- Handling de iframes, popups e elementos dinâmicos
+- API mocking para pagamento (route.fulfill)
+- Environment configuration (.env para URLs e credenciais)
+- Retry logic para flaky tests (configurar no playwright.config.ts)
+- Parallel execution com isolation completo (contextos independentes)
+  &lt;/requisitos_tecnicos&gt;
 
-    git clone [https://github.com/paulo-qa-tests/playwright-e2e-ecommerce-pom.git](https://github.com/paulo-qa-tests/playwright-e2e-ecommerce-pom.git)
+&lt;formato_saida&gt;
+Entregue em seções numeradas, com:
 
-    Instale as dependências:
-    Bash
+- Código completo em blocos TypeScript (syntax highlighting)
+- Explicação técnica antes de cada bloco de código
+- Comandos de terminal para execução
+- Checklist de validação antes de ir para produção
+- Badge de status para CI/CD
 
-    npm install
+Use XML tags internas para organizar sub-seções quando necessário (ex: &lt;setup&gt;, &lt;page_objects&gt;, &lt;tests&gt;, &lt;ci_cd&gt;).
+&lt;/formato_saida&gt;
 
-    Instale os navegadores do Playwright:
-    Bash
+&lt;exemplo_execucao&gt;
+Exemplo de como deve funcionar após clonar o projeto:
 
-    npx playwright install
-
-    Execute os testes:
-    Bash
-
-    npx playwright test
-
-    Visualize o relatório:
-    Bash
-
-    npx playwright show-report
-
-⚙️ CI/CD (Continuous Integration)
-
-Este projeto possui uma pipeline configurada via GitHub Actions que:
-
-    Valida o código em um ambiente Linux limpo.
-
-    Executa os testes em múltiplos navegadores simultaneamente.
-
-    Gera e armazena artefatos (relatórios e evidências) em caso de falha.
-
-👤 Autor
-
-Paulo Henrique Da Costa Barbosa QA Engineer em formação | Especialista em Automação e Qualidade de Software.
+```bash
+npm install
+npx playwright install
+npm run test:smoke    # Executa apenas cenários críticos
+npm run test:regression  # Suite completa
+npm run report:allure  # Abre relatório Allure
 ```
