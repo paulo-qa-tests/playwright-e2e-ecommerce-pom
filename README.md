@@ -98,6 +98,26 @@ Este projeto possui uma pipeline configurada via GitHub Actions que:
 
     Gera e armazena artefatos (relatórios e evidências) em caso de falha.
 
+    ---
+
+## 📊 Evidências de Execução
+
+Abaixo, a demonstração da execução bem-sucedida da suíte de testes em ambiente local e os resultados gerados pelo Playwright Reporter.
+
+### ✅ Testes Passando (Local & CI/CD)
+<p align="center">
+  <img src="assets/test-success.png" alt="Print dos testes passando" width="850">
+</p>
+
+> **Nota:** O projeto está configurado para capturar automaticamente screenshots e vídeos apenas em caso de falhas, otimizando o armazenamento e focando no debugging ágil.
+
+### 📈 Relatório Detalhado (Playwright HTML Report)
+Ao final de cada execução, um relatório interativo é gerado, permitindo a análise granular de cada step:
+
+<p align="center">
+  <img src="assets/report-demo.png" alt="Exemplo do Relatório HTML" width="850">
+</p>
+
 👤 Autor
 
 Paulo Henrique Da Costa Barbosa QA Engineer em formação | Automação e Qualidade de Software.
