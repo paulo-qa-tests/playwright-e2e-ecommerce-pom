@@ -1,95 +1,92 @@
-🎭 Playwright E2E Automation - Ecommerce Flow
+# 🎭 Playwright E2E Automation - Ecommerce Flow
 
-Este projeto de portfólio demonstra uma automação robusta de testes de ponta a ponta (E2E) aplicada a um fluxo real de e-commerce. A solução utiliza o padrão Page Object Model (POM) e está integrada a um pipeline de CI/CD profissional.
-🎯 Escopo dos Testes
+![Playwright Tests](https://github.com/paulo-qa-tests/playwright-e2e-ecommerce-pom/actions/workflows/playwright.yml/badge.svg)
+![Playwright Version](https://img.shields.io/badge/playwright-v1.43+-2e8b57)
+![Node Version](https://img.shields.io/badge/node-v18+-339933)
 
-O script valida o "Caminho Feliz" completo de uma compra:
+Este projeto apresenta a automação de testes de ponta a ponta (E2E) para um fluxo completo de compra em uma plataforma de e-commerce. O objetivo principal é demonstrar a aplicação de padrões de design modernos e boas práticas de engenharia de QA para garantir a qualidade e estabilidade do software.
 
-    🔐 Autenticação: Login seguro na plataforma.
+---
 
-    🛒 Dashboard: Seleção dinâmica de produtos por nome.
+## 🎯 Objetivo do Teste
 
-    📦 Carrinho: Verificação de persistência de itens.
+Validar o fluxo crítico de negócio, incluindo:
 
-    💳 Checkout: Preenchimento de dados de envio e finalização.
+1. **Autenticação:** Login com credenciais válidas.
+2. **Catálogo:** Busca e seleção de produtos específicos.
+3. **Carrinho:** Persistência de itens e validação de valores.
+4. **Checkout:** Processo de finalização com seleção dinâmica de país.
+5. **Histórico:** Validação de que o pedido foi corretamente registrado no banco de dados através da interface de pedidos.
 
-    📑 Orders: Validação do ID do pedido no histórico de ordens.
+---
 
-🏗️ Arquitetura do Projeto
+## 🏗️ Arquitetura e Padrões de Projeto
 
-Para garantir manutenibilidade e escalabilidade, o projeto segue o padrão POM (Page Object Model):
+### Page Object Model (POM)
 
-    pages/: Contém a lógica de mapeamento de elementos e ações das telas.
+O projeto utiliza o padrão **POM** para separar a lógica de interação com os elementos da interface da lógica dos testes. Isso garante:
 
-    tests/: Scripts de teste puramente comportamentais.
+- **Manutenibilidade:** Se um seletor mudar, alteramos em apenas um lugar.
+- **Reutilização:** Métodos de login e navegação são compartilhados entre diferentes suítes.
+- **Legibilidade:** Os testes são escritos de forma declarativa, focando no "o quê" e não no "como".
 
-    .github/: Configuração do pipeline de integração contínua.
+### Estrutura de Pastas
 
-    Diferencial Técnico: O código foi refatorado para ser Case Sensitive, garantindo execução idêntica tanto em sistemas Windows quanto em ambientes Linux (CI/CD).
+```text
+├── .github/workflows/   # Pipeline de CI/CD (GitHub Actions)
+├── pages/               # Classes Page Objects (Seletores e Ações)
+├── tests/               # Scripts de teste (Spec files)
+├── playwright.config.js # Configurações globais e Cross-browser
+└── .gitignore           # Exclusão de arquivos sensíveis e pesados
 
-⚙️ Instalação e Configuração
+🛠️ Tecnologias e Ferramentas
 
-Escolha o seu sistema operacional para preparar o ambiente local:
-🪟 Windows (PowerShell / CMD)
-PowerShell
+    Playwright: Framework principal para automação.
 
-# 1. Clonar o projeto
+    JavaScript: Linguagem de scripting.
 
-git clone https://github.com/paulo-qa-tests/playwright-e2e-ecommerce-pom.git
-cd playwright-e2e-ecommerce-pom
+    GitHub Actions: Execução automatizada em cada Push ou Pull Request.
 
-# 2. Instalar dependências
+    Múltiplos Navegadores: Testes configurados para Chromium, Firefox, Webkit e Mobile Chrome.
 
-npm install
+🚀 Como Executar Localmente
 
-# 3. Instalar navegadores do Playwright
+    Clone o repositório:
+    Bash
 
-npx playwright install
+    git clone [https://github.com/paulo-qa-tests/playwright-e2e-ecommerce-pom.git](https://github.com/paulo-qa-tests/playwright-e2e-ecommerce-pom.git)
 
-🐧 Linux (Ubuntu/Debian)
-Bash
+    Instale as dependências:
+    Bash
 
-# 1. Clonar o projeto
+    sudo npm install
 
-git clone https://github.com/paulo-qa-tests/playwright-e2e-ecommerce-pom.git
-cd playwright-e2e-ecommerce-pom
+    Instale os navegadores do Playwright:
+    Bash
 
-# 2. Instalar dependências e bibliotecas do sistema
+    npx playwright install
 
-npm install
-sudo npx playwright install-deps
-npx playwright install
+    Execute os testes:
+    Bash
 
-🚀 Executando os Testes
+    npx playwright test
 
-Com o ambiente configurado, utilize os comandos abaixo:
-Comando Descrição
-npm test Executa todos os testes em modo Headless (background).
-npm run test:headed Executa os testes com a interface do navegador visível.
-npm run report Abre o relatório HTML detalhado da última execução.
-🧪 CI/CD - GitHub Actions
+    Visualize o relatório:
+    Bash
 
-O projeto conta com um workflow automatizado que é disparado a cada push ou pull_request.
+    npx playwright show-report
 
-    Ambiente: Ubuntu-latest.
+⚙️ CI/CD (Continuous Integration)
 
-    Relatórios: Gerados automaticamente e armazenados como artefatos no GitHub em caso de falhas, permitindo auditoria de vídeos e screenshots.
+Este projeto possui uma pipeline configurada via GitHub Actions que:
 
-🛠️ Tecnologias Utilizadas
+    Valida o código em um ambiente Linux limpo.
 
-    💻 Playwright - Framework de automação.
+    Executa os testes em múltiplos navegadores simultaneamente.
 
-    🟨 JavaScript - Linguagem de programação.
-
-    🐙 GitHub Actions - Pipeline de CI/CD.
-
-    📊 HTML Reporter - Visualização de resultados.
+    Gera e armazena artefatos (relatórios e evidências) em caso de falha.
 
 👤 Autor
 
-Paulo Henrique Da Costa Barbosa
-QA Automation Engineer em formação.
-
-    LinkedIn: [Seu Link Aqui]
-
-    Portfólio: Link do Repositório
+Paulo Henrique Da Costa Barbosa QA Engineer em formação | Especialista em Automação e Qualidade de Software.
+```
