@@ -47,7 +47,7 @@ O projeto utiliza o padrão **POM** para separar a lógica de interação com os
 
     GitHub Actions: Execução automatizada em cada Push ou Pull Request.
 
-    Múltiplos Navegadores: Testes configurados para Chromium, Firefox, Webkit e Mobile Chrome.
+    Múltiplos Navegadores: Testes configurados para Chromium, Firefox, Chrome.
 
 
     🪟 Windows (PowerShell / CMD)
@@ -55,7 +55,8 @@ O projeto utiliza o padrão **POM** para separar a lógica de interação com os
     # 1. Clonar o projeto
          git clone https://github.com/paulo-qa-tests/playwright-e2e-ecommerce-pom.git
 
-    cd playwright-e2e-ecommerce-pom
+         acessar o diretório
+         cd playwright-e2e-ecommerce-pom
 
     # 2. Instalar dependências
          npm install
@@ -67,6 +68,8 @@ O projeto utiliza o padrão **POM** para separar a lógica de interação com os
     🐧 Linux (Ubuntu/Debian)
     # 1. Clonar o projeto
          git clone https://github.com/paulo-qa-tests/playwright-e2e-ecommerce-pom.git
+
+         acessar o diretório
          cd playwright-e2e-ecommerce-pom
 
     # 2. Instalar dependências e bibliotecas do sistema
@@ -97,5 +100,5 @@ Este projeto possui uma pipeline configurada via GitHub Actions que:
 
 👤 Autor
 
-Paulo Henrique Da Costa Barbosa QA Engineer em formação | Especialista em Automação e Qualidade de Software.
+Paulo Henrique Da Costa Barbosa QA Engineer em formação | Automação e Qualidade de Software.
 ```
