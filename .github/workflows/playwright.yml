@@ -1,0 +1,40 @@
+name: Playwright Tests
+# Define quando o teste será executado
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  test:
+    timeout-minutes: 60
+    runs-on: ubuntu-latest # Usa o Linux mais recente
+
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v4 # Baixa seu código no runner do GitHub
+
+      - name: Instalar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/* # Usa a versão estável mais recente do Node
+
+      - name: Instalar dependências
+        run: npm install # Instala o que está no seu package.json
+
+      - name: Instalar Navegadores do Playwright
+        run: npx playwright install --with-deps # Baixa os binários do Chrome/Firefox/Safari
+
+      - name: Executar Testes E2E
+        run: npx playwright test # Roda o comando de teste
+
+      # Esta etapa salva o relatório (report) para você baixar depois,
+      # mesmo se o teste falhar.
+      - name: Upload de Relatório
+        uses: actions/upload-artifact@v4
+        if: always() # Garante que o relatório seja salvo mesmo em caso de erro
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 30

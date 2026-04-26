@@ -1,0 +1,28 @@
+# Dependências (Nunca envie a pasta node_modules)
+node_modules/
+
+# Relatórios de Testes e Resultados
+test-results/
+playwright-report/
+blob-report/
+playwright/.local-browsers/
+
+# Evidências (Vídeos e Screenshots gerados localmente)
+videos/
+screenshots/
+
+# Arquivos de Sistema e Log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.eslintcache
+.DS_Store
+
+# Variáveis de Ambiente e Segredos (CRÍTICO)
+.env
+.env.*
+auth.json
+
+# Pasta de build/dist (se houver)
+dist/
+build/
