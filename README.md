@@ -49,30 +49,39 @@ O projeto utiliza o padrão **POM** para separar a lógica de interação com os
 
     Múltiplos Navegadores: Testes configurados para Chromium, Firefox, Webkit e Mobile Chrome.
 
-🚀 Como Executar Localmente
 
-    Clone o repositório:
-    Bash
+    🪟 Windows (PowerShell / CMD)
 
-    git clone [https://github.com/paulo-qa-tests/playwright-e2e-ecommerce-pom.git](https://github.com/paulo-qa-tests/playwright-e2e-ecommerce-pom.git)
+    # 1. Clonar o projeto
+         git clone https://github.com/paulo-qa-tests/playwright-e2e-ecommerce-pom.git
 
-    Instale as dependências:
-    Bash
+    cd playwright-e2e-ecommerce-pom
 
-    sudo npm install
+    # 2. Instalar dependências
+         npm install
 
-    Instale os navegadores do Playwright:
-    Bash
+    # 3. Instalar navegadores do Playwright
+         npx playwright install
 
-    npx playwright install
 
-    Execute os testes:
-    Bash
+    🐧 Linux (Ubuntu/Debian)
+    # 1. Clonar o projeto
+         git clone https://github.com/paulo-qa-tests/playwright-e2e-ecommerce-pom.git
+         cd playwright-e2e-ecommerce-pom
 
-    npx playwright test
+    # 2. Instalar dependências e bibliotecas do sistema
+        sudo npm install
+        sudo npx playwright install-deps
+        npx playwright install
 
-    Visualize o relatório:
-    Bash
+
+
+   🚀 Executando os Testes
+
+  Com o ambiente configurado, utilize os comandos abaixo:
+  Comando	Descrição
+
+    npx playwright test --headed
 
     npx playwright show-report
 

@@ -39,18 +39,18 @@ module.exports = defineConfig({
 
   /* Configuração de múltiplos navegadores (Cross-browser) */
   projects: [
-    /*
-        {
-          name: 'firefox',
-          use: { ...devices['Desktop Firefox'] }
-        },
-    */
+
+    {
+      name: 'firefox',
+      use: { ...devices['Desktop Firefox'] },
+    },
+
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      use: { ...devices['Desktop Chrome'] }
     }
 
-    
+
 
   ],
 });
