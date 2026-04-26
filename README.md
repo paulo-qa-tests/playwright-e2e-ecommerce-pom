@@ -106,13 +106,9 @@ Abaixo, a demonstração da execução bem-sucedida da suíte de testes em ambie
 
 ### ✅ Testes Passando (Local & CI/CD)
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/paulo-qa-tests/playwright-e2e-ecommerce-pom/main/assets/test-success.png" alt="Print dos testes passando" width="850">
-</p>
+https://raw.githubusercontent.com/paulo-qa-tests/playwright-e2e-ecommerce-pom/main/assets/test-success.png
 
-<p align="center">
-  <img src="https://github.com/paulo-qa-tests/playwright-e2e-ecommerce-pom/blob/main/assets/report-demo.png" alt="Print dos Relatório passando" width="850">
-</p>
+https://github.com/paulo-qa-tests/playwright-e2e-ecommerce-pom/blob/main/assets/report-demo.png
 
 👤 Autor
 
