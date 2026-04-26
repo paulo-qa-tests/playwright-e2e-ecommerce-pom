@@ -15,10 +15,14 @@ class CartPage {
   }
 
   // Verifica se o produto está visível no carrinho
+  // Verifica se o produto está visível no carrinho
+  // pages/CartPage.js
   async verifyProductIsDisplayed(productName) {
-    await this.cartList.first().waitFor();
-    const isVisible = await this.page.locator(`h3:has-text('${productName}')`).isVisible();
-    expect(isVisible).toBeTruthy(); // Asserção de segurança
+    // Usamos o filtro de texto do Playwright que é mais estável que o seletor direto
+    const productLocator = this.page.getByRole('heading', { name: productName });
+
+    // Espera o produto aparecer (ajustado para o ambiente do GitHub Actions)
+    await productLocator.waitFor({ state: 'visible', timeout: 15000 });
   }
 
   // Fluxo de checkout: seleciona país e confirma pedido
