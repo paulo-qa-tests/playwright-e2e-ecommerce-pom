@@ -4,6 +4,8 @@
 ![Playwright Version](https://img.shields.io/badge/playwright-v1.43+-2e8b57)
 ![Node Version](https://img.shields.io/badge/node-v18+-339933)
 
+![image alt](https://raw.githubusercontent.com/paulo-qa-tests/playwright-e2e-ecommerce-pom/main/assets/test-success.png)
+
 Este projeto apresenta a automação de testes de ponta a ponta (E2E) para um fluxo completo de compra em uma plataforma de e-commerce. O objetivo principal é demonstrar a aplicação de padrões de design modernos e boas práticas de engenharia de QA para garantir a qualidade e estabilidade do software.
 
 ---
@@ -106,7 +108,7 @@ Abaixo, a demonstração da execução bem-sucedida da suíte de testes em ambie
 
 ### ✅ Testes Passando (Local & CI/CD)
 
-![Sucesso nos Testes](https://raw.githubusercontent.com/paulo-qa-tests/playwright-e2e-ecommerce-pom/main/assets/test-success.png)
+
 
 
 
