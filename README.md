@@ -105,17 +105,13 @@ Este projeto possui uma pipeline configurada via GitHub Actions que:
 Abaixo, a demonstração da execução bem-sucedida da suíte de testes em ambiente local e os resultados gerados pelo Playwright Reporter.
 
 ### ✅ Testes Passando (Local & CI/CD)
+
 <p align="center">
-  ![Sucesso](assets/test-success.png)
+  <img src="https://raw.githubusercontent.com/paulo-qa-tests/playwright-e2e-ecommerce-pom/main/assets/test-success.png" alt="Print dos testes passando" width="850">
 </p>
 
-> **Nota:** O projeto está configurado para capturar automaticamente screenshots e vídeos apenas em caso de falhas, otimizando o armazenamento e focando no debugging ágil.
-
-### 📈 Relatório Detalhado (Playwright HTML Report)
-Ao final de cada execução, um relatório interativo é gerado, permitindo a análise granular de cada step:
-
 <p align="center">
-  ![Reltório](assets/eport-demo.png)
+  <img src="https://github.com/paulo-qa-tests/playwright-e2e-ecommerce-pom/blob/main/assets/report-demo.png" alt="Print dos Relatório passando" width="850">
 </p>
 
 👤 Autor
